@@ -2,6 +2,7 @@ require("dotenv").config();
 
 var axios = require("axios");
 var keys = require("./keys.js");
+var fs = require("fs");
 
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify ({
@@ -13,7 +14,7 @@ var spotify = new Spotify ({
 var userChoice = process.argv.slice(3);
 // var queryUrl = "http://www.omdbapi.com/?t=" + userChoice + "&y=&plot=short&apikey=trilogy";
 
-console.log(userChoice);
+// console.log(userChoice);
 
 
 // LOGIC FOR MOVIES -----------------------------------------------------------
@@ -38,17 +39,21 @@ function getMovie (queryUrl){
 }
 // LOGIC FOR SPOTIFY----------------UNFINISHED----------------------------
 if (process.argv[2] === "spotify-this-song" && userChoice !==''){
+    getSong();
+};
+
+function getSong(){
     spotify.search({ type: 'track', query: userChoice, limit: 1}, function(err, response) {
-        var spotifyArr = response.tracks.items;
-        for (var i = 0; i < spotifyArr.length; i++){
-            console.log("Artist: ", response.tracks.items[i].album.artists[0].name);
-            console.log("Song: ", response.tracks.items[i].name);
-            console.log("Album: ", response.tracks.items[i].album.name);
-            console.log("Spotify Link: ", response.tracks.items[i].external_urls.spotify);
-        }
-    // console.log(response.tracks);
+    var spotifyArr = response.tracks.items;
+    for (var i = 0; i < spotifyArr.length; i++){
+        console.log("Artist: ", response.tracks.items[i].album.artists[0].name);
+        console.log("Song: ", response.tracks.items[i].name);
+        console.log("Album: ", response.tracks.items[i].album.name);
+        console.log("Spotify Link: ", response.tracks.items[i].external_urls.spotify);
+    }
     });
 };
+
 
 // LOGIC FOR CONCERT EVENT INFO------------------------------------------------------------
 if (process.argv[2] === "concert-this" && userChoice !==''){
@@ -64,3 +69,13 @@ function getConcert (queryUrl){
             
         })
 }
+
+if (process.argv[2] === "do-what-it-says" && userChoice !==''){
+    fs.readFile("random.txt", "utf8", function(error, data){
+        userChoice = "I Want it That Way";
+        getSong();
+  
+    });
+}
+
+
