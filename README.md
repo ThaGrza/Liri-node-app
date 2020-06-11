@@ -25,8 +25,8 @@ N/A
 Open up terminal and "git clone git@github.com:ThaGrza/Liri-node-app.git" in your desired folder. Cd into the folder and run "npm install" to install the dependencies.
 
 ## API Reference
-https://developer.spotify.com/documentation/web-api/
-http://www.omdbapi.com/
+- https://developer.spotify.com/documentation/web-api/
+- http://www.omdbapi.com/
 
 ## Credits
 Andrew Griswold
