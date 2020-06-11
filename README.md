@@ -1,19 +1,37 @@
-# LIRI-BOT
+# Liri-Bot
+## Screenshots / Gifs
+![Screenshot](/assets/images/screenshot.png)
 
-Liri Bot is a command line driven assistant to help find song information, arist/band concert information and movie information.
-The app works by typing in a keyword like 'spotify-this-song' along with a song you'd like information about, i.e " spotify-this-song Old Town Road" and Liri will console log the arists, song name, album name, and a link to the song.
-To get Liri up and running you can use 'node liri.js' with 1 of 4 commands: spotify-this-song, concert-this, movie-this, and do-what-it-says.
-Each keyword will will perform a different action according to what is given.
-The Liri bot uses:
-Node-Spotify-APi,
-Axios,
-Moment,
-DotEnv,
-Bands-in-town api, and the Omdb-api.
+## Motivation
+Liri Bot is a CLI assistant to help find song information, arist/band concert information and movie information. Cure your curiosity and never leave your terminal!
 
-I, Andrew Griswold, was the sole developer on the app and created all functionality from scratch. 
+## How to
+To use Liri Bot, clone this repository and use the command, "node liri.js *command*", with one of the following commands: spotify-this-song *song choice* , concert-this *band choice*, movie-this *movie choice*, or do-what-it-says.
 
-IMAGE:
+## Build Status
+N/A
 
-liribot.png
+## Styling
+N/A
+
+## Tech/framework used
+<b> Built with </b>
+- [Javascript](https://www.javascript.com/)
+- [Node.js](https://nodejs.org/en/)
+## Features
+N/A
+
+## Installation
+Open up terminal and "git clone git@github.com:ThaGrza/Liri-node-app.git" in your desired folder. Cd into the folder and run "npm install" to install the dependencies.
+
+## API Reference
+https://developer.spotify.com/documentation/web-api/
+http://www.omdbapi.com/
+
+## Credits
+Andrew Griswold
+
+## License
+This project is covered by the MIT license.
+MIT © Andrew Griswold%%%
 
